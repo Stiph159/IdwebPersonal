@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonios - GotoTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 80px;
+            color: #0076ff;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        
+        .testimonial-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #0076ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .author-info p {
+            margin: 5px 0 0;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: #ffc107;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <img src="img/logo.png" class="logo" alt="GotoTech logo">
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#nosotros">Nosotros</a>
+                <a href="blog.html">Blog</a>
+                <a href="galeria.html">Galería</a>
+                <a href="testimonios.html">Testimonios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="carrito.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+            </nav>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- TESTIMONIOS -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title">Lo que dicen nuestros clientes</h1>
+            <p class="section-subtitle">Clientes satisfechos que confían en nuestro trabajo</p>
+            
+            <div class="testimonials-container">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        Excelente servicio. Mi computadora no encendía y en menos de 24 horas ya estaba reparada. El técnico fue muy profesional y explicó claramente el problema y la solución. ¡Totalmente recomendado!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Mendoza</h4>
+                            <p>Cliente desde 2024</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        Instalaron cámaras de seguridad en mi negocio y el trabajo fue impecable. Muy ordenados, limpios y profesionales. El sistema funciona perfectamente y puedo monitorear desde mi celular. Precios justos y buen trato.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>María Rodríguez</h4>
+                            <p>Dueña de tienda - Cerro Colorado</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        Compré un teclado y mouse gaming, llegaron rápido y en perfecto estado. Cuando tuve una duda sobre la instalación, me atendieron por WhatsApp inmediatamente. Muy buena atención al cliente.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Javier López</h4>
+                            <p>Estudiante universitario</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        Mi celular se mojó y no encendía. Pensé que estaba perdido, pero en GotoTech lo recuperaron. Aunque el proceso tomó unos días (por el secado), valió la pena la espera. Precio razonable y trabajo garantizado.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Torres</h4>
+                            <p>Cliente satisfecha</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Formulario para dejar testimonio -->
+            <div class="form-container" style="margin-top: 50px;">
+                <h2 style="text-align: center; margin-bottom: 30px;">Deja tu testimonio</h2>
+                <form id="testimonialForm">
+                    <div class="form-group">
+                        <label for="testimonialNombre">Nombre</label>
+                        <input type="text" id="testimonialNombre" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonialEmail">Correo electrónico</label>
+                        <input type="email" id="testimonialEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonialServicio">Servicio recibido</label>
+                        <select id="testimonialServicio" class="form-control">
+                            <option value="">Selecciona un servicio</option>
+                            <option value="reparacion">Reparación de Computadoras</option>
+                            <option value="camaras">Instalación de Cámaras</option>
+                            <option value="accesorios">Venta de Accesorios</option>
+                            <option value="celulares">Reparación de Celulares</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonialMensaje">Tu testimonio *</label>
+                        <textarea id="testimonialMensaje" class="form-control" rows="4" required placeholder="Comparte tu experiencia con nosotros..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Calificación</label>
+                        <div style="display: flex; gap: 10px; font-size: 1.5rem; color: #ffc107;">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <input type="hidden" id="testimonialRating" value="5">
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Enviar Testimonio
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="img/logo-blanco.png" class="footer-logo" alt="GotoTech">
+                    <p>Soluciones tecnológicas confiables para hogares y negocios.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces rápidos</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Servicios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> 978179789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Urb. San Juan A-27</p>
+                    <p><i class="fas fa-clock"></i> Lun-Vie: 9am-7pm</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51978179789"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 GotoTech — Soluciones Tecnológicas | Todos los derechos reservados.</p>
+                <p><a href="admin.html" style="color: #ccc; font-size: 12px;">Panel de Administración</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/51978179789" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+    <script>
+        // Sistema de calificación con estrellas
+        document.addEventListener('DOMContentLoaded', () => {
+            const stars = document.querySelectorAll('[data-rating]');
+            const ratingInput = document.getElementById('testimonialRating');
+            
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    const rating = star.getAttribute('data-rating');
+                    ratingInput.value = rating;
+                    
+                    // Actualizar visualización de estrellas
+                    stars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.classList.remove('far');
+                            s.classList.add('fas');
+                        } else {
+                            s.classList.remove('fas');
+                            s.classList.add('far');
+                        }
+                    });
+                });
+                
+                star.addEventListener('mouseover', () => {
+                    const rating = star.getAttribute('data-rating');
+                    
+                    stars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.classList.remove('far');
+                            s.classList.add('fas');
+                        }
+                    });
+                });
+                
+                star.addEventListener('mouseout', () => {
+                    const currentRating = ratingInput.value;
+                    
+                    stars.forEach((s, index) => {
+                        if (index >= currentRating) {
+                            s.classList.remove('fas');
+                            s.classList.add('far');
+                        }
+                    });
+                });
+            });
+            
+            // Formulario de testimonio
+            const testimonialForm = document.getElementById('testimonialForm');
+            if (testimonialForm) {
+                testimonialForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Simular envío
+                    const submitBtn = testimonialForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                    
+                    setTimeout(() => {
+                        showNotification('¡Gracias por tu testimonio! Lo revisaremos pronto.', 'success');
+                        testimonialForm.reset();
+                        
+                        // Resetear estrellas
+                        stars.forEach(star => {
+                            star.classList.remove('fas');
+                            star.classList.add('far');
+                        });
+                        stars[4].classList.remove('far');
+                        stars[4].classList.add('fas');
+                        ratingInput.value = '5';
+                        
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Testimonio';
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

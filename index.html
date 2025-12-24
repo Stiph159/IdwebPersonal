@@ -1,23 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GotoTech - Soluciones Tecnológicas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Encabezado -->
-  <header>
-    <h1>Minecraft</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="dota.html">Dota 2</a></li>
-        <li><a href="minecraft.html">Minecraft</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-  
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <img src="img/logo.png" class="logo" alt="GotoTech logo">
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="blog.html">Blog</a>
+                <a href="galeria.html">Galería</a>
+                <a href="testimonios.html">Testimonios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="carrito.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+            </nav>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- BANNER -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Soluciones Tecnológicas para Todos</h1>
+            <p>Reparación, instalación, soporte técnico y más — con calidad profesional.</p>
+            <a href="https://wa.me/51978179789" class="btn-banner" target="_blank"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="grid-services">
+                <a href="reparacion-pc.html" class="service-card">
+                    <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                    <h3>Reparación de Computadoras</h3>
+                    <p>Diagnóstico, mantenimiento, formateo, optimización, upgrades y más.</p>
+                </a>
+                <a href="camaras.html" class="service-card">
+                    <div class="service-icon"><i class="fas fa-camera"></i></div>
+                    <h3>Instalación de Cámaras</h3>
+                    <p>Seguridad para tu hogar y negocio con cámaras modernas.</p>
+                </a>
+                <a href="accesorios.html" class="service-card">
+                    <div class="service-icon"><i class="fas fa-keyboard"></i></div>
+                    <h3>Venta de Accesorios</h3>
+                    <p>Todo tipo de accesorios: teclados, mouse, cables, auriculares y más.</p>
+                </a>
+                <a href="celulares.html" class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Reparación de Celulares</h3>
+                    <p>Pantallas, baterías, software, cambios y mantenimiento.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA PREVIEW -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Trabajos Recientes</h2>
+            <p class="section-subtitle">Algunos de nuestros trabajos realizados</p>
+            <div class="gallery-preview">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=Reparación+PC" alt="Trabajo 1">
+                    <p>Reparación de laptop</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=Instalación+Cámaras" alt="Trabajo 2">
+                    <p>Instalación de cámaras</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=Mantenimiento" alt="Trabajo 3">
+                    <p>Mantenimiento preventivo</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="galeria.html" class="btn-secondary">Ver más trabajos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section id="nosotros" class="section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir GotoTech?</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Profesionales Certificados</h3>
+                    <p>Experiencia en hardware, software y sistemas de seguridad.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Precios Justos</h3>
+                    <p>Cotización clara, sin sorpresas. La mejor relación calidad-precio.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Atención Rápida</h3>
+                    <p>Servicio eficiente en el menor tiempo posible. Urgencias atendidas.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Garantía Incluida</h3>
+                    <p>Todos nuestros servicios incluyen garantía por escrito.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA -->
+    <section id="contacto" class="section">
+        <div class="container">
+            <h2 class="section-title">Encuéntranos</h2>
+            <p class="text-center"><i class="fas fa-map-marker-alt"></i> Urb. San Juan A-27, Cerro Colorado - Arequipa</p>
+            <p class="text-center"><i class="fas fa-phone"></i> Teléfono: 978179789</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.527638354197!2d-71.53538892504425!3d-16.39897148397598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b2f26e5e1e9%3A0x6d0b9d0f8e5f5b5e!2sCerro%20Colorado%2C%20Arequipa!5e0!3m2!1ses!2spe!4v1694567890123!5m2!1ses!2spe" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="img/logo-blanco.png" class="footer-logo" alt="GotoTech">
+                    <p>Soluciones tecnológicas confiables para hogares y negocios.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces rápidos</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> 978179789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Urb. San Juan A-27</p>
+                    <p><i class="fas fa-clock"></i> Lun-Vie: 9am-7pm</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51978179789"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 GotoTech — Soluciones Tecnológicas | Todos los derechos reservados.</p>
+                <p><a href="admin.html" style="color: #ccc; font-size: 12px;">Panel de Administración</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/51978179789" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JS -->
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
