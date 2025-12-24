@@ -26,12 +26,61 @@
         </div>
     </header>
 
-    <!-- BANNER -->
-    <section class="banner">
-        <div class="banner-content">
-            <h1>Soluciones Tecnológicas para Todos</h1>
-            <p>Reparación, instalación, soporte técnico y más — con calidad profesional.</p>
-            <a href="https://wa.me/51978179789" class="btn-banner" target="_blank"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
+    <!-- CARRUSEL DE BANNER -->
+    <section class="banner-slider">
+        <div class="slider-container">
+            <!-- Slides -->
+            <div class="slide active">
+                <div class="slide-image" style="background-image: url('https://overflow.pe/wp-content/uploads/2023/05/reparacion-de-computadoras-como-negocio.jpg');"></div>
+                <div class="slide-content">
+                    <h1>Reparación de Computadoras</h1>
+                    <p>Diagnóstico gratuito, reparación rápida y garantía por escrito</p>
+                    <a href="reparacion-pc.html" class="btn-banner">Ver Servicio</a>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('https://thorsmex.mx/wp-content/uploads/2022/08/instalacion-de-un-CCTV-1.jpg');"></div>
+                <div class="slide-content">
+                    <h1>Instalación de Cámaras</h1>
+                    <p>Seguridad 24/7 para tu hogar y negocio con tecnología moderna</p>
+                    <a href="camaras.html" class="btn-banner">Ver Servicio</a>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('https://img.freepik.com/foto-gratis/vendedor-hombre-consultor-profesional-telefonia-movil-tienda-o-tienda-tecnologia_627829-4987.jpg');"></div>
+                <div class="slide-content">
+                    <h1>Venta de Accesorios</h1>
+                    <p>Los mejores accesorios para tu setup gaming y oficina</p>
+                    <a href="accesorios.html" class="btn-banner">Ver Productos</a>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('https://www.santafe.gob.ar/ms/impulsa/wp-content/uploads/sites/67/2024/07/Reparando-iPhone.jpg');"></div>
+                <div class="slide-content">
+                    <h1>Reparación de Celulares</h1>
+                    <p>Pantallas, baterías, software y más. Todas las marcas</p>
+                    <a href="celulares.html" class="btn-banner">Ver Servicio</a>
+                </div>
+            </div>
+            
+            <!-- Flechas de navegación -->
+            <button class="slider-btn prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Indicadores/puntos -->
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
         </div>
     </section>
 
@@ -39,6 +88,7 @@
     <section id="servicios" class="section">
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Soluciones tecnológicas completas para todas tus necesidades</p>
             <div class="grid-services">
                 <a href="reparacion-pc.html" class="service-card">
                     <div class="service-icon"><i class="fas fa-desktop"></i></div>
@@ -71,15 +121,15 @@
             <p class="section-subtitle">Algunos de nuestros trabajos realizados</p>
             <div class="gallery-preview">
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=Reparación+PC" alt="Trabajo 1">
+                    <img src="https://overflow.pe/wp-content/uploads/2023/05/reparacion-de-computadoras-como-negocio.jpg" alt="Trabajo 1">
                     <p>Reparación de laptop</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=Instalación+Cámaras" alt="Trabajo 2">
+                    <img src="https://coolboxpe.vtexassets.com/arquivos/ids/438037-800-800?v=638894416794400000&width=800&height=800&aspect=true" alt="Trabajo 2">
                     <p>Instalación de cámaras</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=Mantenimiento" alt="Trabajo 3">
+                    <img src="https://cdn0.uncomo.com/es/posts/9/4/4/como_limpiar_la_pantalla_del_ordenador_52449_orig.jpg" alt="Trabajo 3">
                     <p>Mantenimiento preventivo</p>
                 </div>
             </div>
@@ -119,16 +169,16 @@
     </section>
 
     <!-- MAPA -->
-    <section id="contacto" class="section">
-        <div class="container">
-            <h2 class="section-title">Encuéntranos</h2>
-            <p class="text-center"><i class="fas fa-map-marker-alt"></i> Urb. San Juan A-27, Cerro Colorado - Arequipa</p>
-            <p class="text-center"><i class="fas fa-phone"></i> Teléfono: 978179789</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.527638354197!2d-71.53538892504425!3d-16.39897148397598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b2f26e5e1e9%3A0x6d0b9d0f8e5f5b5e!2sCerro%20Colorado%2C%20Arequipa!5e0!3m2!1ses!2spe!4v1694567890123!5m2!1ses!2spe" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+<section id="contacto" class="section">
+    <div class="container">
+        <h2 class="section-title">Encuéntranos</h2>
+        <p class="text-center"><i class="fas fa-map-marker-alt"></i> Urb. San Juan A-27, Cerro Colorado - Arequipa</p>
+        <p class="text-center"><i class="fas fa-phone"></i> Teléfono: 978179789</p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.478803445286!2d-71.56474999999999!3d-16.392083299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDIzJzMxLjUiUyA3McKwMzMnNTMuMSJX!5e0!3m2!1ses!2spe!4v1709760000000!5m2!1ses!2spe" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -174,5 +224,374 @@
 
     <!-- JS -->
     <script src="script.js"></script>
+    
+    <!-- Script para el carrusel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variables del carrusel
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            // Función para mostrar un slide específico
+            function showSlide(n) {
+                // Ocultar todos los slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Remover clase active de todos los dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Ajustar índice si es necesario
+                if (n >= slides.length) {
+                    currentSlide = 0;
+                } else if (n < 0) {
+                    currentSlide = slides.length - 1;
+                } else {
+                    currentSlide = n;
+                }
+                
+                // Mostrar slide actual
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+            
+            // Función para siguiente slide
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+            
+            // Función para slide anterior
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+            
+            // Iniciar carrusel automático
+            function startAutoSlide() {
+                slideInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+            }
+            
+            // Detener carrusel automático
+            function stopAutoSlide() {
+                clearInterval(slideInterval);
+            }
+            
+            // Event listeners para botones
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            }
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            }
+            
+            // Event listeners para dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+            
+            // Pausar carrusel al hacer hover
+            const sliderContainer = document.querySelector('.slider-container');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+                sliderContainer.addEventListener('mouseleave', startAutoSlide);
+            }
+            
+            // Inicializar carrusel
+            showSlide(0);
+            startAutoSlide();
+        });
+    </script>
+    
+    <!-- Estilos para el carrusel -->
+    <style>
+        /* Estilos del carrusel */
+        .banner-slider {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            margin-top: 0;
+        }
+        
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+        
+        .slide-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 3;
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        .slide-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease;
+        }
+        
+        .slide-content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .prev-btn {
+            left: 20px;
+        }
+        
+        .next-btn {
+            right: 20px;
+        }
+        
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+        
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #0076ff;
+            transform: scale(1.2);
+        }
+        
+        .dot:hover {
+            background: #0076ff;
+        }
+        
+        .btn-banner {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #0076ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            animation: fadeIn 1.5s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-banner:hover {
+            background: transparent;
+            border-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Animaciones */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .banner-slider {
+                height: 500px;
+            }
+            
+            .slide-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .slide-content p {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .banner-slider {
+                height: 400px;
+            }
+            
+            .slide-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .slide-content p {
+                font-size: 1.1rem;
+            }
+            
+            .btn-banner {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .slider-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .banner-slider {
+                height: 350px;
+            }
+            
+            .slide-content h1 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .prev-btn {
+                left: 10px;
+            }
+            
+            .next-btn {
+                right: 10px;
+            }
+            
+            .slider-dots {
+                bottom: 20px;
+            }
+            
+            .dot {
+                width: 12px;
+                height: 12px;
+            }
+        }
+    </style>
 </body>
 </html>

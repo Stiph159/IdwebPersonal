@@ -26,68 +26,50 @@
         </div>
     </header>
 
-    <!-- FORMULARIO DE CONTACTO -->
-    <section class="section">
-        <div class="container">
-            <h1 class="section-title">Contáctanos</h1>
-            <p class="section-subtitle">¿Tienes alguna pregunta? Escríbenos y te responderemos pronto.</p>
-            
-            <div class="form-container">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="nombre"><i class="fas fa-user"></i> Nombre completo *</label>
-                        <input type="text" id="nombre" name="nombre" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email"><i class="fas fa-envelope"></i> Correo electrónico *</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="servicio"><i class="fas fa-cogs"></i> Servicio de interés</label>
-                        <select id="servicio" name="servicio" class="form-control">
-                            <option value="">Selecciona un servicio</option>
-                            <option value="reparacion">Reparación de Computadoras</option>
-                            <option value="camaras">Instalación de Cámaras</option>
-                            <option value="accesorios">Venta de Accesorios</option>
-                            <option value="celulares">Reparación de Celulares</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mensaje"><i class="fas fa-comment"></i> Mensaje *</label>
-                        <textarea id="mensaje" name="mensaje" class="form-control" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                    </button>
-                </form>
-            </div>
-            
-            <!-- Información de contacto -->
-            <div class="contact-info" style="margin-top: 50px; text-align: center;">
-                <div style="display: inline-block; text-align: left;">
-                    <h3><i class="fas fa-map-marker-alt"></i> Dirección</h3>
-                    <p>Urb. San Juan A-27, Cerro Colorado - Arequipa</p>
-                    
-                    <h3><i class="fas fa-phone"></i> Teléfono</h3>
-                    <p>978179789</p>
-                    
-                    <h3><i class="fas fa-clock"></i> Horario de atención</h3>
-                    <p>Lunes a Viernes: 9:00 AM - 7:00 PM</p>
-                    <p>Sábados: 9:00 AM - 2:00 PM</p>
-                </div>
-            </div>
+    <!-- En contacto.html, reemplaza el formulario actual por: -->
+<div class="form-container">
+    <h2 style="text-align: center; margin-bottom: 20px;">Contáctanos Directamente</h2>
+    <p style="text-align: center; margin-bottom: 30px; color: #666;">
+        Completa el formulario y serás redirigido a WhatsApp para enviarnos tu mensaje.
+    </p>
+    
+    <form id="whatsappForm">
+        <div class="form-group">
+            <label for="nombre"><i class="fas fa-user"></i> Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
         </div>
-    </section>
+        
+        <div class="form-group">
+            <label for="telefono"><i class="fas fa-phone"></i> Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="servicio"><i class="fas fa-cogs"></i> Servicio de interés *</label>
+            <select id="servicio" name="servicio" class="form-control" required>
+                <option value="">Selecciona un servicio</option>
+                <option value="reparacion-pc">Reparación de Computadoras</option>
+                <option value="camaras">Instalación de Cámaras</option>
+                <option value="accesorios">Venta de Accesorios</option>
+                <option value="celulares">Reparación de Celulares</option>
+                <option value="otro">Otro servicio</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="mensaje"><i class="fas fa-comment"></i> Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" class="form-control" rows="4" required placeholder="Describa brevemente lo que necesita..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn-primary">
+            <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+        </button>
+        
+        <p style="text-align: center; margin-top: 20px; color: #666; font-size: 0.9rem;">
+            <i class="fas fa-info-circle"></i> Serás redirigido a WhatsApp para enviar el mensaje
+        </p>
+    </form>
+</div>
 
     <!-- FOOTER -->
     <footer class="footer">

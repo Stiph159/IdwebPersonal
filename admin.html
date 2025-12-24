@@ -7,24 +7,49 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Estilos específicos para admin */
+        .admin-container {
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
+        
+        .admin-login {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .admin-login h1 {
+            color: #0076ff;
+            margin-bottom: 30px;
+        }
+        
         .admin-header {
             background: #0076ff;
             color: white;
             padding: 20px 0;
-            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .admin-nav {
             background: #333;
             padding: 15px 0;
-            margin-bottom: 30px;
+        }
+        
+        .admin-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .admin-nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
+            padding: 8px 15px;
             border-radius: 5px;
             transition: background 0.3s;
         }
@@ -33,7 +58,21 @@
             background: #0076ff;
         }
         
-        .stats-cards {
+        .logout-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .admin-content {
+            padding: 40px 0;
+        }
+        
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
@@ -59,10 +98,6 @@
             margin: 10px 0;
         }
         
-        .stat-card p {
-            color: #666;
-        }
-        
         .admin-section {
             background: white;
             border-radius: 10px;
@@ -75,295 +110,411 @@
             margin-bottom: 25px;
             padding-bottom: 15px;
             border-bottom: 2px solid #f0f0f0;
+            color: #333;
         }
         
-        .login-container {
-            max-width: 400px;
-            margin: 100px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
         }
         
-        .login-container h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #0076ff;
+        .data-table th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #0076ff;
         }
         
-        .logout-btn {
+        .data-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .btn-sm {
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .btn-danger {
             background: #dc3545;
             color: white;
-            padding: 8px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: auto;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .btn-primary-sm {
+            background: #0076ff;
+            color: white;
+        }
+        
+        .btn-primary-sm:hover {
+            background: #0056cc;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ddd;
         }
     </style>
 </head>
 <body>
-    <!-- Contenido principal -->
-    <div id="admin-content">
-        <!-- Esto se llenará dinámicamente con JavaScript -->
+    <div class="admin-container" id="adminContainer">
+        <!-- El contenido se carga dinámicamente con JavaScript -->
     </div>
 
-    <!-- Formulario de login (oculto inicialmente) -->
-    <div id="login-form" class="login-container" style="display: none;">
-        <h1><i class="fas fa-lock"></i> Acceso Administrativo</h1>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="adminUser">Usuario</label>
-                <input type="text" id="adminUser" class="form-control" value="admin">
-            </div>
-            <div class="form-group">
-                <label for="adminPass">Contraseña</label>
-                <input type="password" id="adminPass" class="form-control" value="gototech2025">
-            </div>
-            <button type="submit" class="btn-primary">
-                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
-            </button>
-        </form>
-        <p style="text-align: center; margin-top: 20px; color: #666;">
-            <small>Usuario: admin | Contraseña: gototech2025</small>
-        </p>
-    </div>
-
-    <!-- JS -->
-    <script src="script.js"></script>
     <script>
-        // Verificar si el usuario está autenticado
-        const isAdmin = localStorage.getItem('gototechAdmin') === 'true';
+        // Credenciales de administración (en producción esto iría en el backend)
+        const ADMIN_CREDENTIALS = {
+            username: 'admin',
+            password: 'gototech2025'
+        };
         
-        // Datos de ejemplo
-        const contactosEjemplo = [
-            {id: 1, nombre: 'Juan Pérez', email: 'juan@email.com', telefono: '999888777', mensaje: 'Consulta sobre reparación', fecha: '2025-03-15'},
-            {id: 2, nombre: 'María García', email: 'maria@email.com', telefono: '999777666', mensaje: 'Cotización para cámaras', fecha: '2025-03-14'},
-            {id: 3, nombre: 'Carlos López', email: 'carlos@email.com', telefono: '', mensaje: 'Necesito accesorios para mi PC', fecha: '2025-03-13'}
+        // Datos de ejemplo para mostrar
+        const sampleContacts = [
+            {
+                id: 1,
+                fecha: '2025-03-15 10:30',
+                nombre: 'Juan Pérez',
+                telefono: '999888777',
+                servicio: 'Reparación de PC',
+                mensaje: 'Mi computadora no enciende'
+            },
+            {
+                id: 2,
+                fecha: '2025-03-14 14:20',
+                nombre: 'María García',
+                telefono: '999777666',
+                servicio: 'Instalación de Cámaras',
+                mensaje: 'Cotización para 4 cámaras'
+            },
+            {
+                id: 3,
+                fecha: '2025-03-13 09:15',
+                nombre: 'Carlos López',
+                telefono: '999666555',
+                servicio: 'Accesorios',
+                mensaje: 'Busco teclado gaming'
+            }
         ];
         
-        const productosEjemplo = [
-            {id: 1, nombre: 'Teclado Mecánico RGB', descripcion: 'Teclado gaming', precio: 150.00, categoria: 'accesorios', stock: 10},
-            {id: 2, nombre: 'Mouse Inalámbrico', descripcion: 'Mouse Bluetooth', precio: 80.00, categoria: 'accesorios', stock: 15},
-            {id: 3, nombre: 'Cámara de Seguridad', descripcion: 'Cámara IP 4K', precio: 350.00, categoria: 'camaras', stock: 5}
+        const sampleProducts = [
+            {
+                id: 1,
+                nombre: 'Teclado Mecánico RGB',
+                categoria: 'accesorios',
+                precio: 150.00,
+                stock: 10,
+                vendidos: 5
+            },
+            {
+                id: 2,
+                nombre: 'Mouse Gaming Inalámbrico',
+                categoria: 'accesorios',
+                precio: 80.00,
+                stock: 15,
+                vendidos: 8
+            },
+            {
+                id: 3,
+                nombre: 'Audífonos Gaming 7.1',
+                categoria: 'accesorios',
+                precio: 200.00,
+                stock: 8,
+                vendidos: 3
+            }
         ];
-
-        // Función para mostrar el panel de administración
-        function mostrarPanelAdmin() {
-            const adminContent = document.getElementById('admin-content');
+        
+        // Verificar si hay sesión activa
+        function checkAdminSession() {
+            return localStorage.getItem('gototech_admin_logged') === 'true';
+        }
+        
+        // Mostrar pantalla de login
+        function showLoginScreen() {
+            const container = document.getElementById('adminContainer');
+            container.innerHTML = `
+                <div class="admin-login">
+                    <h1><i class="fas fa-lock"></i> Panel de Administración</h1>
+                    <p style="color: #666; margin-bottom: 30px;">Ingresa tus credenciales para continuar</p>
+                    
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <input type="text" id="username" class="form-control" placeholder="Usuario" value="admin" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="password" id="password" class="form-control" placeholder="Contraseña" value="gototech2025" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" style="width: 100%;">
+                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                        </button>
+                    </form>
+                    
+                    <div style="margin-top: 25px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <p style="margin: 0; font-size: 0.9rem; color: #666;">
+                            <strong>Credenciales de prueba:</strong><br>
+                            Usuario: admin<br>
+                            Contraseña: gototech2025
+                        </p>
+                    </div>
+                </div>
+            `;
             
-            adminContent.innerHTML = `
-                <!-- HEADER ADMIN -->
+            // Configurar el formulario de login
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                
+                if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+                    localStorage.setItem('gototech_admin_logged', 'true');
+                    showAdminPanel();
+                } else {
+                    alert('Credenciales incorrectas. Intenta nuevamente.');
+                }
+            });
+        }
+        
+        // Mostrar panel de administración
+        function showAdminPanel() {
+            const container = document.getElementById('adminContainer');
+            container.innerHTML = `
+                <!-- Header -->
                 <header class="admin-header">
                     <div class="container">
-                        <h1><i class="fas fa-cogs"></i> Panel de Administración</h1>
-                        <p>GotoTech - Sistema de gestión</p>
+                        <h1 style="margin: 0;"><i class="fas fa-cogs"></i> GotoTech - Panel de Control</h1>
                     </div>
                 </header>
                 
-                <!-- NAVEGACIÓN -->
-                <div class="admin-nav">
-                    <div class="container" style="display: flex; align-items: center;">
-                        <a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                        <a href="#contactos"><i class="fas fa-envelope"></i> Contactos</a>
-                        <a href="#productos"><i class="fas fa-box"></i> Productos</a>
+                <!-- Navegación -->
+                <nav class="admin-nav">
+                    <div class="container">
+                        <div>
+                            <a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                            <a href="#contactos"><i class="fas fa-users"></i> Contactos</a>
+                            <a href="#productos"><i class="fas fa-box"></i> Productos</a>
+                            <a href="#ventas"><i class="fas fa-chart-line"></i> Ventas</a>
+                        </div>
                         <button class="logout-btn" onclick="logout()">
-                            <i class="fas fa-sign-out-alt"></i> Salir
+                            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
                         </button>
                     </div>
-                </div>
+                </nav>
                 
-                <!-- CONTENIDO PRINCIPAL -->
-                <main class="container">
-                    <!-- ESTADÍSTICAS -->
-                    <div class="stats-cards">
-                        <div class="stat-card">
-                            <i class="fas fa-envelope"></i>
-                            <h3 id="totalContactos">${contactosEjemplo.length}</h3>
-                            <p>Mensajes Recibidos</p>
+                <!-- Contenido principal -->
+                <main class="admin-content">
+                    <div class="container">
+                        <!-- Estadísticas -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <i class="fas fa-envelope"></i>
+                                <h3>${sampleContacts.length}</h3>
+                                <p>Contactos Recibidos</p>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-box"></i>
+                                <h3>${sampleProducts.length}</h3>
+                                <p>Productos Activos</p>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-shopping-cart"></i>
+                                <h3>16</h3>
+                                <p>Ventas del Mes</p>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-dollar-sign"></i>
+                                <h3>S/. 2,540</h3>
+                                <p>Ingresos Totales</p>
+                            </div>
                         </div>
-                        <div class="stat-card">
-                            <i class="fas fa-box"></i>
-                            <h3 id="totalProductos">${productosEjemplo.length}</h3>
-                            <p>Productos Activos</p>
+                        
+                        <!-- Sección de Contactos -->
+                        <div class="admin-section" id="contactos">
+                            <h2><i class="fas fa-users"></i> Contactos Recibidos</h2>
+                            ${sampleContacts.length > 0 ? `
+                                <div class="table-responsive">
+                                    <table class="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Fecha</th>
+                                                <th>Nombre</th>
+                                                <th>Teléfono</th>
+                                                <th>Servicio</th>
+                                                <th>Mensaje</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            ${sampleContacts.map(contact => `
+                                                <tr>
+                                                    <td>${contact.id}</td>
+                                                    <td>${contact.fecha}</td>
+                                                    <td>${contact.nombre}</td>
+                                                    <td>${contact.telefono}</td>
+                                                    <td>${contact.servicio}</td>
+                                                    <td style="max-width: 250px;">${contact.mensaje}</td>
+                                                    <td>
+                                                        <button class="btn-sm btn-danger" onclick="deleteContact(${contact.id})">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            ` : `
+                                <div class="empty-state">
+                                    <i class="fas fa-inbox"></i>
+                                    <h3>No hay contactos recibidos</h3>
+                                    <p>Los contactos aparecerán aquí cuando los clientes usen el formulario.</p>
+                                </div>
+                            `}
                         </div>
-                        <div class="stat-card">
-                            <i class="fas fa-shopping-cart"></i>
-                            <h3 id="totalVentas">12</h3>
-                            <p>Ventas este Mes</p>
+                        
+                        <!-- Sección de Productos -->
+                        <div class="admin-section" id="productos">
+                            <h2><i class="fas fa-box"></i> Gestión de Productos</h2>
+                            <div style="margin-bottom: 20px;">
+                                <button class="btn-primary" onclick="addProduct()">
+                                    <i class="fas fa-plus"></i> Agregar Producto
+                                </button>
+                            </div>
+                            
+                            ${sampleProducts.length > 0 ? `
+                                <div class="table-responsive">
+                                    <table class="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Categoría</th>
+                                                <th>Precio</th>
+                                                <th>Stock</th>
+                                                <th>Vendidos</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            ${sampleProducts.map(product => `
+                                                <tr>
+                                                    <td>${product.id}</td>
+                                                    <td>${product.nombre}</td>
+                                                    <td>${product.categoria}</td>
+                                                    <td>S/. ${product.precio.toFixed(2)}</td>
+                                                    <td>${product.stock}</td>
+                                                    <td>${product.vendidos}</td>
+                                                    <td>
+                                                        <button class="btn-sm btn-primary-sm" style="margin-right: 5px;" onclick="editProduct(${product.id})">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                        <button class="btn-sm btn-danger" onclick="deleteProduct(${product.id})">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            ` : `
+                                <div class="empty-state">
+                                    <i class="fas fa-box-open"></i>
+                                    <h3>No hay productos registrados</h3>
+                                    <p>Agrega productos para mostrar en la tienda.</p>
+                                </div>
+                            `}
                         </div>
-                        <div class="stat-card">
-                            <i class="fas fa-users"></i>
-                            <h3 id="totalClientes">24</h3>
-                            <p>Clientes Satisfechos</p>
-                        </div>
-                    </div>
-                    
-                    <!-- SECCIÓN CONTACTOS -->
-                    <div class="admin-section" id="contactos">
-                        <h2><i class="fas fa-envelope"></i> Mensajes de Contacto</h2>
-                        <div class="table-responsive">
-                            <table class="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nombre</th>
-                                        <th>Email</th>
-                                        <th>Teléfono</th>
-                                        <th>Mensaje</th>
-                                        <th>Fecha</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="contactosTable">
-                                    ${contactosEjemplo.map(c => `
-                                        <tr>
-                                            <td>${c.id}</td>
-                                            <td>${c.nombre}</td>
-                                            <td>${c.email}</td>
-                                            <td>${c.telefono || '-'}</td>
-                                            <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">${c.mensaje}</td>
-                                            <td>${c.fecha}</td>
-                                            <td>
-                                                <button class="btn-danger" onclick="eliminarContacto(${c.id})">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    
-                    <!-- SECCIÓN PRODUCTOS -->
-                    <div class="admin-section" id="productos">
-                        <h2><i class="fas fa-box"></i> Gestión de Productos</h2>
-                        <div style="margin-bottom: 20px;">
-                            <button class="btn-primary" onclick="nuevoProducto()">
-                                <i class="fas fa-plus"></i> Nuevo Producto
-                            </button>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nombre</th>
-                                        <th>Descripción</th>
-                                        <th>Precio</th>
-                                        <th>Categoría</th>
-                                        <th>Stock</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="productosTable">
-                                    ${productosEjemplo.map(p => `
-                                        <tr>
-                                            <td>${p.id}</td>
-                                            <td>${p.nombre}</td>
-                                            <td>${p.descripcion}</td>
-                                            <td>S/. ${p.precio.toFixed(2)}</td>
-                                            <td>${p.categoria}</td>
-                                            <td>${p.stock}</td>
-                                            <td>
-                                                <button class="btn-secondary" style="padding: 5px 10px; margin-right: 5px;">
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button class="btn-danger" onclick="eliminarProducto(${p.id})">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
+                        
+                        <!-- Sección de Ventas -->
+                        <div class="admin-section" id="ventas">
+                            <h2><i class="fas fa-chart-line"></i> Ventas Recientes</h2>
+                            <div class="empty-state">
+                                <i class="fas fa-chart-bar"></i>
+                                <h3>Módulo de Ventas</h3>
+                                <p>Esta funcionalidad estará disponible en la próxima actualización.</p>
+                                <p><small>Podrás ver historial de ventas, generar reportes y más.</small></p>
+                            </div>
                         </div>
                     </div>
                 </main>
                 
-                <!-- FOOTER -->
-                <footer class="footer">
+                <!-- Footer -->
+                <footer class="footer" style="margin-top: 50px;">
                     <div class="container">
                         <div class="footer-bottom">
                             <p>© 2025 GotoTech — Panel de Administración | 
-                                <span id="lastUpdate">Última actualización: ${new Date().toLocaleTimeString()}</span>
+                                <span id="lastUpdate">Último acceso: ${new Date().toLocaleString()}</span>
                             </p>
                         </div>
                     </div>
                 </footer>
             `;
             
-            // Actualizar la hora periódicamente
+            // Actualizar hora periódicamente
             setInterval(() => {
                 const lastUpdate = document.getElementById('lastUpdate');
                 if (lastUpdate) {
-                    lastUpdate.textContent = `Última actualización: ${new Date().toLocaleTimeString()}`;
+                    lastUpdate.textContent = `Último acceso: ${new Date().toLocaleString()}`;
                 }
-            }, 30000);
+            }, 60000);
         }
-
-        // Función para mostrar el formulario de login
-        function mostrarLogin() {
-            document.getElementById('login-form').style.display = 'block';
-            document.getElementById('admin-content').style.display = 'none';
+        
+        // Funciones de administración
+        function deleteContact(id) {
+            if (confirm('¿Estás seguro de eliminar este contacto?')) {
+                alert(`Contacto #${id} eliminado (simulación)`);
+                // En producción aquí harías una petición DELETE al backend
+            }
         }
-
-        // Función para cerrar sesión
+        
+        function addProduct() {
+            alert('Funcionalidad para agregar producto (en desarrollo)\n\nEn una versión completa, aquí podrías:\n1. Subir imagen del producto\n2. Definir precio y stock\n3. Agregar descripción\n4. Categorizar el producto');
+        }
+        
+        function editProduct(id) {
+            alert(`Editando producto #${id} (simulación)`);
+        }
+        
+        function deleteProduct(id) {
+            if (confirm('¿Estás seguro de eliminar este producto?')) {
+                alert(`Producto #${id} eliminado (simulación)`);
+                // En producción aquí harías una petición DELETE al backend
+            }
+        }
+        
         function logout() {
-            localStorage.removeItem('gototechAdmin');
-            location.reload();
+            localStorage.removeItem('gototech_admin_logged');
+            showLoginScreen();
         }
-
-        // Función para eliminar contacto
-        function eliminarContacto(id) {
-            if (confirm('¿Eliminar este contacto?')) {
-                alert(`Contacto ${id} eliminado (simulación)`);
-                // En producción, aquí harías una petición a la API
-            }
-        }
-
-        // Función para eliminar producto
-        function eliminarProducto(id) {
-            if (confirm('¿Eliminar este producto?')) {
-                alert(`Producto ${id} eliminado (simulación)`);
-                // En producción, aquí harías una petición a la API
-            }
-        }
-
-        // Función para nuevo producto
-        function nuevoProducto() {
-            alert('Funcionalidad para agregar nuevo producto (en desarrollo)');
-        }
-
-        // Configurar formulario de login
-        function configurarLogin() {
-            const loginForm = document.getElementById('loginForm');
-            if (loginForm) {
-                loginForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const user = document.getElementById('adminUser').value;
-                    const pass = document.getElementById('adminPass').value;
-                    
-                    // Credenciales básicas
-                    if (user === 'admin' && pass === 'gototech2025') {
-                        localStorage.setItem('gototechAdmin', 'true');
-                        location.reload();
-                    } else {
-                        alert('Credenciales incorrectas');
-                    }
-                });
-            }
-        }
-
-        // Inicializar la página
-        document.addEventListener('DOMContentLoaded', function() {
-            if (isAdmin) {
-                mostrarPanelAdmin();
+        
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            if (checkAdminSession()) {
+                showAdminPanel();
             } else {
-                mostrarLogin();
-                configurarLogin();
+                showLoginScreen();
             }
         });
     </script>

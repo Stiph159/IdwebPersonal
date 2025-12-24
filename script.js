@@ -477,3 +477,51 @@ if (!document.querySelector('#notification-styles')) {
 document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
 });
+
+// Agrega esto al final de tu script.js
+function setupWhatsAppForm() {
+    const whatsappForm = document.getElementById('whatsappForm');
+    
+    if (whatsappForm) {
+        whatsappForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener datos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            // Formatear mensaje para WhatsApp
+            let whatsappMessage = `*Nuevo mensaje de contacto - GotoTech*\n\n`;
+            whatsappMessage += `*Nombre:* ${nombre}\n`;
+            whatsappMessage += `*Teléfono:* ${telefono}\n`;
+            whatsappMessage += `*Servicio:* ${servicio}\n\n`;
+            whatsappMessage += `*Mensaje:*\n${mensaje}\n\n`;
+            whatsappMessage += `_Enviado desde gototech.com_`;
+            
+            // Codificar mensaje para URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Tu número de WhatsApp
+            const phoneNumber = '51978179789'; // Sin el +51
+            
+            // Crear URL de WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Abrir WhatsApp en nueva pestaña
+            window.open(whatsappURL, '_blank');
+            
+            // Mostrar confirmación
+            showNotification('Redirigiendo a WhatsApp...', 'info');
+            
+            // Opcional: Limpiar formulario después de 1 segundo
+            setTimeout(() => {
+                whatsappForm.reset();
+            }, 1000);
+        });
+    }
+}
+
+// Llamar la función cuando el DOM cargue
+document.addEventListener('DOMContentLoaded', setupWhatsAppForm);
