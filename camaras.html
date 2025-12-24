@@ -1,46 +1,349 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cámaras</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalación de Cámaras - GotoTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="banner">
-    <h1>Cámaras y Accesorios</h1>
-    <p>Encuentra la cámara perfecta para ti</p>
-  </header>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <img src="img/logo.png" class="logo" alt="GotoTech logo">
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#nosotros">Nosotros</a>
+                <a href="blog.html">Blog</a>
+                <a href="galeria.html">Galería</a>
+                <a href="testimonios.html">Testimonios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="carrito.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+            </nav>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
 
+    <!-- BANNER ESPECÍFICO -->
+    <section class="banner" style="background: linear-gradient(135deg, #0076ff, #0056cc);">
+        <div class="banner-content">
+            <h1><i class="fas fa-camera"></i> Instalación de Cámaras de Seguridad</h1>
+            <p>Protege tu hogar o negocio con sistemas de vigilancia modernos y confiables</p>
+        </div>
+    </section>
 
-  <section class="servicios">
-    <div class="card">
-      <h2>Cámaras DSLR</h2>
-      <p>Alta calidad para fotografía profesional.</p>
-    </div>
-    <div class="card">
-      <h2>Cámaras de Seguridad</h2>
-      <p>Protege tu hogar o negocio con nuestras cámaras.</p>
-    </div>
-    <div class="card">
-      <h2>Accesorios</h2>
-      <p>Trípodes, lentes y más para tu equipo fotográfico.</p>
-    </div>
-  </section>
+    <!-- SERVICIOS DETALLADOS -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios de Seguridad</h2>
+            <p class="section-subtitle">Soluciones completas de vigilancia para cada necesidad</p>
+            
+            <div class="grid-services">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Paquete Hogar Básico</h3>
+                    <p>4 cámaras HD + DVR 4 canales + monitoreo remoto + instalación</p>
+                    <p class="price">S/. 800</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Paquete Negocio Profesional</h3>
+                    <p>8 cámaras Full HD + NVR 8 canales + almacenamiento 1TB + instalación</p>
+                    <p class="price">S/. 1,500</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-wifi"></i></div>
+                    <h3>Cámaras IP Inalámbricas</h3>
+                    <p>Instalación sin cables, visión nocturna, detección de movimiento</p>
+                    <p class="price">Desde S/. 120 c/u</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-door-closed"></i></div>
+                    <h3>Sistema Completo + Alarma</h3>
+                    <p>Cámaras + sistema de alarma + sensores + monitoreo 24/7</p>
+                    <p class="price">Desde S/. 2,000</p>
+                </div>
+            </div>
+            
+            <!-- TIPOS DE CÁMARAS -->
+            <div style="margin-top: 60px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">Tipos de Cámaras Disponibles</h3>
+                <div class="camera-types">
+                    <div class="camera-type">
+                        <img src="https://via.placeholder.com/250x180/0076ff/ffffff?text=Cámara+Domo" alt="Cámara Domo">
+                        <h4>Cámara Domo</h4>
+                        <p>Ideal para interiores, diseño discreto, 360° rotación</p>
+                    </div>
+                    <div class="camera-type">
+                        <img src="https://via.placeholder.com/250x180/0076ff/ffffff?text=Cámara+Bala" alt="Cámara Bala">
+                        <h4>Cámara Bala</h4>
+                        <p>Para exteriores, resistente al clima, visión nocturna</p>
+                    </div>
+                    <div class="camera-type">
+                        <img src="https://via.placeholder.com/250x180/0076ff/ffffff?text=Cámara+PTZ" alt="Cámara PTZ">
+                        <h4>Cámara PTZ</h4>
+                        <p>Pan/Tilt/Zoom, control remoto, seguimiento automático</p>
+                    </div>
+                    <div class="camera-type">
+                        <img src="https://via.placeholder.com/250x180/0076ff/ffffff?text=Cámara+IP" alt="Cámara IP">
+                        <h4>Cámara IP</h4>
+                        <p>Conectividad Wi-Fi, alta resolución, sin cables</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TABLA DE PRECIOS -->
+            <div style="margin-top: 50px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">Precios de Servicios</h3>
+                <div class="pricing-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Garantía</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Instalación Básica (4 cámaras)</td>
+                                <td>Cámaras HD + DVR + cables + instalación</td>
+                                <td>S/. 800</td>
+                                <td>1 año</td>
+                            </tr>
+                            <tr>
+                                <td>Instalación Avanzada (8 cámaras)</td>
+                                <td>Cámaras Full HD + NVR + 1TB + instalación profesional</td>
+                                <td>S/. 1,500</td>
+                                <td>2 años</td>
+                            </tr>
+                            <tr>
+                                <td>Instalación Cámara Individual</td>
+                                <td>Una cámara adicional a sistema existente</td>
+                                <td>S/. 100</td>
+                                <td>6 meses</td>
+                            </tr>
+                            <tr>
+                                <td>Mantenimiento Anual</td>
+                                <td>Limpieza, verificación y actualización de sistema</td>
+                                <td>S/. 200</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Monitoreo Remoto 24/7</td>
+                                <td>Supervisión continua + alertas + respaldo en nube</td>
+                                <td>S/. 50/mes</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="contacto.html" class="btn-secondary">
+                    <i class="fas fa-shield-alt"></i> Solicitar Cotización
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- BENEFICIOS -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Beneficios de Nuestros Sistemas</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Monitoreo desde Celular</h3>
+                    <p>Ve tus cámaras desde cualquier lugar con nuestra app</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Almacenamiento en la Nube</h3>
+                    <p>Grabaciones seguras incluso si roban el equipo</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-bell"></i>
+                    <h3>Alertas Instantáneas</h3>
+                    <p>Recibe notificaciones en tiempo real de movimiento</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Privacidad Garantizada</h3>
+                    <p>Tus datos están protegidos con encriptación</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <img src="img/logo-blanco.png" class="footer-logo">
-            <p>© 2025 GotoTech — Soluciones Tecnológicas</p>
-            <p>Todos los derechos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="img/logo-blanco.png" class="footer-logo" alt="GotoTech">
+                    <p>Soluciones tecnológicas confiables para hogares y negocios.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces rápidos</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Servicios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> 978179789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Urb. San Juan A-27</p>
+                    <p><i class="fas fa-clock"></i> Lun-Vie: 9am-7pm</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51978179789"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 GotoTech — Soluciones Tecnológicas | Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/51978179789" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-  <a href="https://wa.me/tu-numero" class="whatsapp-btn" target="_blank">💬</a>
-
-
-  <script src="script.js"></script>
+    <!-- JS -->
+    <script src="script.js"></script>
+    <style>
+        .price {
+            color: #0076ff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        
+        .pricing-table {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        
+        .pricing-table table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+        
+        .pricing-table th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #0076ff;
+        }
+        
+        .pricing-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .camera-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .camera-type {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .camera-type:hover {
+            transform: translateY(-5px);
+        }
+        
+        .camera-type img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .camera-type h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .camera-type p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .benefit i {
+            font-size: 2.5rem;
+            color: #0076ff;
+            margin-bottom: 15px;
+        }
+        
+        .benefit h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-table {
+                padding: 10px;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .camera-types {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>

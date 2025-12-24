@@ -1,46 +1,411 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accesorios</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesorios de Computadora - GotoTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="banner">
-    <h1>Accesorios para Computadoras y Celulares</h1>
-    <p>Todo lo que necesitas en un solo lugar</p>
-  </header>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <img src="img/logo.png" class="logo" alt="GotoTech logo">
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#nosotros">Nosotros</a>
+                <a href="blog.html">Blog</a>
+                <a href="galeria.html">Galería</a>
+                <a href="testimonios.html">Testimonios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="carrito.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+            </nav>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
 
+    <!-- BANNER ESPECÍFICO -->
+    <section class="banner" style="background: linear-gradient(135deg, #0076ff, #0056cc);">
+        <div class="banner-content">
+            <h1><i class="fas fa-keyboard"></i> Accesorios de Computadora</h1>
+            <p>Los mejores accesorios para mejorar tu experiencia digital</p>
+        </div>
+    </section>
 
-  <section class="servicios">
-    <div class="card">
-      <h2>Teclados y Mouses</h2>
-      <p>Modelos para trabajo y gaming.</p>
-    </div>
-    <div class="card">
-      <h2>Cables y Conectores</h2>
-      <p>Todo tipo de cables y adaptadores.</p>
-    </div>
-    <div class="card">
-      <h2>Fundas y Protectores</h2>
-      <p>Mantén tus dispositivos seguros y con estilo.</p>
-    </div>
-  </section>
+    <!-- CATEGORÍAS -->
+    <section class="section">
+        <div class="container">
+            <div class="filter-buttons" style="margin-bottom: 30px;">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="teclados">Teclados</button>
+                <button class="filter-btn" data-filter="mouses">Mouses</button>
+                <button class="filter-btn" data-filter="audio">Audio</button>
+                <button class="filter-btn" data-filter="almacenamiento">Almacenamiento</button>
+            </div>
+            
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">Calidad garantizada y precios competitivos</p>
+            
+            <!-- PRODUCTOS -->
+            <div class="grid-products">
+                <!-- Producto 1 -->
+                <div class="product-card" data-category="teclados">
+                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=Teclado+Gaming" alt="Teclado Gaming">
+                    <div class="product-info">
+                        <h3>Teclado Mecánico RGB Gaming</h3>
+                        <p class="product-desc">Teclado mecánico con retroiluminación RGB, switches azules y reposamuñecas.</p>
+                        <div class="product-price">
+                            <span class="price">S/. 150.00</span>
+                            <span class="old-price">S/. 180.00</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCartProduct('p1', 'Teclado Mecánico RGB Gaming', 'Teclado gaming con retroiluminación RGB', 150.00, 'https://via.placeholder.com/300x200/0076ff/ffffff?text=Teclado+Gaming')">
+                            <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="product-card" data-category="mouses">
+                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=Mouse+Gaming" alt="Mouse Gaming">
+                    <div class="product-info">
+                        <h3>Mouse Gaming Inalámbrico</h3>
+                        <p class="product-desc">Mouse ergonómico con sensor óptico 16000 DPI y 6 botones programables.</p>
+                        <div class="product-price">
+                            <span class="price">S/. 80.00</span>
+                            <span class="old-price">S/. 100.00</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCartProduct('p2', 'Mouse Gaming Inalámbrico', 'Mouse ergonómico gaming', 80.00, 'https://via.placeholder.com/300x200/0076ff/ffffff?text=Mouse+Gaming')">
+                            <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-card" data-category="audio">
+                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=Audífonos+Gaming" alt="Audífonos Gaming">
+                    <div class="product-info">
+                        <h3>Audífonos Gaming 7.1</h3>
+                        <p class="product-desc">Audífonos con sonido envolvente 7.1, micrófono retráctil y almohadillas memory foam.</p>
+                        <div class="product-price">
+                            <span class="price">S/. 200.00</span>
+                            <span class="old-price">S/. 250.00</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCartProduct('p3', 'Audífonos Gaming 7.1', 'Audífonos con sonido envolvente', 200.00, 'https://via.placeholder.com/300x200/0076ff/ffffff?text=Audífonos+Gaming')">
+                            <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="product-card" data-category="almacenamiento">
+                    <img src="https://via.placeholder.com/300x200/0076ff/ffffff?text=SSD+500GB" alt="SSD 500GB">
+                    <div class="product-info">
+                        <h3>SSD 500GB SATA III</h3>
+                        <p class="product-desc">Disco sólido de alta velocidad, ideal para mejorar el rendimiento de tu PC.</p>
+                        <div class="product-price">
+                            <span class="price">S/. 120.00</span>
+                            <span class="old-price">S/. 150.00</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCartProduct('p4', 'SSD 500GB SATA III', 'Disco sólido de alta velocidad', 120.00, 'https://via.placeholder.com/300x200/0076ff/ffffff?text=SSD+500GB')">
+                            <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- OFERTA ESPECIAL -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="special-offer">
+                <div class="offer-content">
+                    <h2><i class="fas fa-gift"></i> Oferta Especial</h2>
+                    <h3>Combo Gaming Pro</h3>
+                    <p>Teclado + Mouse + Audífonos + Mousepad</p>
+                    <div class="offer-price">
+                        <span class="price">S/. 380.00</span>
+                        <span class="old-price">S/. 480.00</span>
+                    </div>
+                    <p class="offer-save">¡Ahorras S/. 100.00!</p>
+                    <button class="btn-add-cart" onclick="addToCartProduct('combo1', 'Combo Gaming Pro', 'Teclado + Mouse + Audífonos + Mousepad', 380.00, 'https://via.placeholder.com/300x200/0076ff/ffffff?text=Combo+Gaming')">
+                        <i class="fas fa-shopping-cart"></i> Comprar Combo
+                    </button>
+                </div>
+                <div class="offer-image">
+                    <img src="https://via.placeholder.com/400x300/0076ff/ffffff?text=Combo+Gaming" alt="Combo Gaming">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <img src="img/logo-blanco.png" class="footer-logo">
-            <p>© 2025 GotoTech — Soluciones Tecnológicas</p>
-            <p>Todos los derechos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="img/logo-blanco.png" class="footer-logo" alt="GotoTech">
+                    <p>Soluciones tecnológicas confiables para hogares y negocios.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces rápidos</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Servicios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> 978179789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Urb. San Juan A-27</p>
+                    <p><i class="fas fa-clock"></i> Lun-Vie: 9am-7pm</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51978179789"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 GotoTech — Soluciones Tecnológicas | Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/51978179789" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-  <a href="https://wa.me/tu-numero" class="whatsapp-btn" target="_blank">💬</a>
-
-
-  <script src="script.js"></script>
+    <!-- JS -->
+    <script src="script.js"></script>
+    <script>
+        // Función para agregar productos al carrito
+        function addToCartProduct(id, name, description, price, image) {
+            const product = {
+                id: id,
+                name: name,
+                description: description,
+                price: price,
+                image: image
+            };
+            
+            // Usar la función addToCart de script.js
+            addToCart(product);
+        }
+        
+        // Filtro de productos
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remover clase active de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Agregar clase active al botón clickeado
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Filtrar productos
+                    productCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <style>
+        /* Estilos específicos para productos */
+        .grid-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            height: 60px;
+            overflow: hidden;
+        }
+        
+        .product-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            height: 65px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #0076ff;
+        }
+        
+        .old-price {
+            font-size: 0.9rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .btn-add-cart {
+            width: 100%;
+            padding: 12px;
+            background: #0076ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-add-cart:hover {
+            background: #0056cc;
+        }
+        
+        .special-offer {
+            background: linear-gradient(135deg, #0076ff, #00bfff);
+            color: white;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .offer-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .offer-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .offer-price {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .offer-price .price {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .offer-price .old-price {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .offer-save {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+        
+        .offer-image img {
+            width: 250px;
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .special-offer {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .offer-image img {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .grid-products {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background: #0076ff;
+            color: white;
+        }
+        
+        .filter-btn:hover {
+            background: #0076ff;
+            color: white;
+        }
+    </style>
 </body>
 </html>

@@ -1,50 +1,225 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reparación de PC</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparación de Computadoras - GotoTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header / Banner -->
-  <header class="banner">
-    <h1>Reparación de Computadoras</h1>
-    <p>Servicios profesionales para tu PC</p>
-  </header>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <img src="img/logo.png" class="logo" alt="GotoTech logo">
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#nosotros">Nosotros</a>
+                <a href="blog.html">Blog</a>
+                <a href="galeria.html">Galería</a>
+                <a href="testimonios.html">Testimonios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="carrito.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+            </nav>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
 
+    <!-- BANNER ESPECÍFICO -->
+    <section class="banner" style="background: linear-gradient(135deg, #0076ff, #0056cc);">
+        <div class="banner-content">
+            <h1><i class="fas fa-desktop"></i> Reparación de Computadoras</h1>
+            <p>Servicio profesional de diagnóstico, mantenimiento y reparación para todo tipo de computadoras</p>
+        </div>
+    </section>
 
-  <!-- Sección de servicios -->
-  <section class="servicios">
-    <div class="card">
-      <h2>Reparación de Hardware</h2>
-      <p>Diagnóstico y reparación de componentes internos.</p>
-    </div>
-    <div class="card">
-      <h2>Optimización de Sistema</h2>
-      <p>Limpieza de software y optimización del rendimiento.</p>
-    </div>
-    <div class="card">
-      <h2>Instalación de Periféricos</h2>
-      <p>Conexión y configuración de todos tus dispositivos.</p>
-    </div>
-  </section>
+    <!-- SERVICIOS DETALLADOS -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios de Reparación</h2>
+            <p class="section-subtitle">Ofrecemos soluciones completas para tus equipos</p>
+            
+            <div class="grid-services">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-search"></i></div>
+                    <h3>Diagnóstico Gratuito</h3>
+                    <p>Evaluación completa de hardware y software para identificar problemas.</p>
+                    <p class="price">GRATIS</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Reparación de Hardware</h3>
+                    <p>Cambio de componentes: tarjetas madre, discos duros, memorias RAM, fuentes de poder.</p>
+                    <p class="price">Desde S/. 50</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-broom"></i></div>
+                    <h3>Limpieza Profunda</h3>
+                    <p>Limpieza interna completa para prevenir sobrecalentamiento y mejorar rendimiento.</p>
+                    <p class="price">S/. 40</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Optimización de Sistema</h3>
+                    <p>Formateo, instalación de Windows, drivers y software necesario para máximo rendimiento.</p>
+                    <p class="price">S/. 80</p>
+                </div>
+            </div>
+            
+            <!-- TABLA DE PRECIOS -->
+            <div style="margin-top: 50px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">Precios de Servicios Populares</h3>
+                <div class="pricing-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Tiempo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Formateo e Instalación Windows</td>
+                                <td>Instalación limpia con drivers y software básico</td>
+                                <td>S/. 80</td>
+                                <td>2-3 horas</td>
+                            </tr>
+                            <tr>
+                                <td>Cambio de Disco Duro</td>
+                                <td>Instalación de HDD/SSD + sistema operativo</td>
+                                <td>S/. 60 + costo disco</td>
+                                <td>1-2 horas</td>
+                            </tr>
+                            <tr>
+                                <td>Reparación de Pantalla Laptop</td>
+                                <td>Cambio de pantalla según modelo</td>
+                                <td>Desde S/. 120</td>
+                                <td>1-2 horas</td>
+                            </tr>
+                            <tr>
+                                <td>Limpieza Interna Profunda</td>
+                                <td>Limpieza de ventiladores y cambio de pasta térmica</td>
+                                <td>S/. 40</td>
+                                <td>30-45 min</td>
+                            </tr>
+                            <tr>
+                                <td>Eliminación de Virus</td>
+                                <td>Limpieza completa de malware y optimización</td>
+                                <td>S/. 50</td>
+                                <td>1-2 horas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="contacto.html" class="btn-secondary">
+                    <i class="fas fa-calendar-check"></i> Solicitar Servicio
+                </a>
+            </div>
+        </div>
+    </section>
 
-
-  <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <img src="img/logo-blanco.png" class="footer-logo">
-            <p>© 2025 GotoTech — Soluciones Tecnológicas</p>
-            <p>Todos los derechos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="img/logo-blanco.png" class="footer-logo" alt="GotoTech">
+                    <p>Soluciones tecnológicas confiables para hogares y negocios.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces rápidos</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Servicios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> 978179789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Urb. San Juan A-27</p>
+                    <p><i class="fas fa-clock"></i> Lun-Vie: 9am-7pm</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51978179789"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 GotoTech — Soluciones Tecnológicas | Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/51978179789" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-  <!-- WhatsApp -->
-  <a href="https://wa.me/tu-numero" class="whatsapp-btn" target="_blank">💬</a>
-
-
-  <script src="script.js"></script>
+    <!-- JS -->
+    <script src="script.js"></script>
+    <style>
+        .price {
+            color: #0076ff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        
+        .pricing-table {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        
+        .pricing-table table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+        
+        .pricing-table th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #0076ff;
+        }
+        
+        .pricing-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-table {
+                padding: 10px;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </body>
 </html>

@@ -361,3 +361,119 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ====== FUNCIONES PARA EL CARRITO ======
+
+// Función global para agregar al carrito
+function addToCart(product) {
+    // Obtener carrito actual
+    let cart = JSON.parse(localStorage.getItem('gototechCart')) || [];
+    
+    // Verificar si el producto ya está en el carrito
+    const existingItem = cart.find(item => item.id === product.id);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            ...product,
+            quantity: 1
+        });
+    }
+    
+    // Guardar en localStorage
+    localStorage.setItem('gototechCart', JSON.stringify(cart));
+    
+    // Actualizar contador
+    updateCartCount();
+    
+    // Mostrar notificación
+    showNotification(`${product.name} agregado al carrito`, 'success');
+}
+
+// Función para actualizar el contador del carrito
+function updateCartCount() {
+    const cartCountElements = document.querySelectorAll('#cart-count');
+    const cart = JSON.parse(localStorage.getItem('gototechCart')) || [];
+    
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    
+    cartCountElements.forEach(element => {
+        element.textContent = totalItems;
+    });
+}
+
+// Función para mostrar notificaciones
+function showNotification(message, type = 'success') {
+    // Crear elemento de notificación
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+        <span>${message}</span>
+    `;
+    
+    // Estilos
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#28a745' : '#17a2b8'};
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 9999;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Remover después de 3 segundos
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                document.body.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
+
+// Agregar estilos CSS para las animaciones
+if (!document.querySelector('#notification-styles')) {
+    const style = document.createElement('style');
+    style.id = 'notification-styles';
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Inicializar contador del carrito cuando se carga la página
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+});
